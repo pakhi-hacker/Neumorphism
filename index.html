@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side_Bar_Menu_Creating</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:sans-serif;
+        }
+        body{
+            background: #ecf0f3;
+        }
+       .side-bar{
+            position: relative;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100vh;
+            background: #ecf0f3;
+            padding: 12px;
+            box-shadow: -3px -3px 7px #ffffff,
+                         3px 3px 5px #ceced1,
+                  inset -3px -3px 7px #ffffff,
+                  inset  3px  3px 5px #ceced1;
+            transition: all 0.5s ease;
+        }
+        .side-bar .title{
+            display: flex;
+            justify-content: space-evenly;
+        }
+       .side-bar .title .logo{
+        font-size: 27px;
+        font-weight: 600;
+        color: #31344b;
+       }
+       .side-bar ul{
+        margin-top: 35px;
+        list-style: none;
+       }
+       .side-bar ul a{
+        color: #31344b;
+        text-decoration: none;
+        display: block;
+        margin-top: 12px;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 10px 25px;
+        border-radius:6px;
+        box-shadow: -3px -3px 7px #ffffff,
+                    3px 3px 5px #ceced1 ;
+                    position: relative;
+       }
+       .side-bar ul i{
+        margin-right: 10px;
+       }
+       .media-icon{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+       }
+       .media-icon a{
+        margin: 0 4px;
+        font-size: 17px;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        box-shadow: -3px -3px 7px #ffffff,
+                     3px 3px 5px #ceced1 ;
+        text-align: center;
+        line-height: 42px;
+        position: relative;
+       }
+       .side-bar ul a:hover:before,
+       .media-icon a:hover::before{
+        position: absolute;
+        content:'';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset -3px -3px 7px #ffffff,
+                    inset 3px 3px 5px #ceced1;
+       }
+       .side-bar ul a:hover:before{
+        border-radius: 6px;
+       }
+       .side-bar ul a:hover{
+        color: #3498db;
+       }
+       /*.media-icon a:hover::before{
+        border-radius: 50%;
+       }*/
+       .media-icon a:nth-child(1){
+        color: #124a70;
+       }
+       .media-icon a:nth-child(2){
+        color: #1da1f2;
+       }
+       .media-icon a:nth-child(3){
+        color: #e1306c;
+       }
+       .media-icon a:nth-child(4){
+        color: red;
+       }
+       label{
+        font-size: 17px;
+        color: #31344b;
+        height: 37px;
+        width: 37px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 37px;
+        cursor: pointer;
+        box-shadow: -3px -3px 7px #ffffff,
+                     3px 3px 5px #ceced1 ;
+        transition: 0.5s ease;
+       }
+       .bars{
+        position: absolute;
+        left: 15px;
+        top: 15px;
+       }
+       label:hover{
+        box-shadow: inset -3px -3px 7px #ffffff,
+                    inset 3px 3px 5px #ceced1;
+        color: #3498db;
+       }
+       #check{
+        display: none;
+       }
+       #check:checked~.side-bar{
+        left: 0;
+       }
+     </style>
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label class="button bars" for="check"><i class="fas fa-bars"></i></label>
+    <div class="side-bar">
+        <div class="title">
+            <div class="logo">💝Pakhi🌈</div>
+            <label class="button cancel" for="check"><i class="fas fa-times"></i></label>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-qrcode"></i>Dashbord</a></li>
+            <li><a href="#"><i class="fas fa-link"></i>Shortcut</a></li>
+            <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
+            <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+            <li><a href="#"><i class="fas fa-phone-volume"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-comments"></i>Feedback</a></li>
+            
+        </ul>
+        <div class="media-icon">
+            <a href="#"> <i class="fab fa-facebook"></i></a>
+            <a href="#"> <i class=" fab fa-twitter"></i></a>
+            <a href="#"> <i class="fab fa-instagram"></i></a>
+            <a href="#"> <i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</body>
+</html>
